@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="金三胖本题考查的是找工具首先打开zip发现是动态图动态图闪过flag于是打开stegslove–analyse–frame browser（帧的浏览器）不停切帧发现flag { hello hongke }(虽然并不清楚为什么最后flag提交失败)没事了 原来是hellohongke中间没有空格 N种解决办法上来就遇到了解压后发现该应用无法打开的问题上CSDN叫我打开属性，点兼容性（失败）修改re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BUUCTF MISC习题">
+<meta property="og:url" content="http://example.com/2023/08/25/BUUCTF%E4%B9%A0%E9%A2%98%E9%87%91%E4%B8%89/index.html">
+<meta property="og:site_name" content="Violet的网安妙妙屋">
+<meta property="og:description" content="金三胖本题考查的是找工具首先打开zip发现是动态图动态图闪过flag于是打开stegslove–analyse–frame browser（帧的浏览器）不停切帧发现flag { hello hongke }(虽然并不清楚为什么最后flag提交失败)没事了 原来是hellohongke中间没有空格 N种解决办法上来就遇到了解压后发现该应用无法打开的问题上CSDN叫我打开属性，点兼容性（失败）修改re">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-6.png">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-7.png">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-8.png">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-9.png">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-10.png">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-15.png">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-16.png">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-17.png">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-18.png">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-20.png">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-21.png">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-22.png">
+<meta property="article:published_time" content="2023-08-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-05T11:36:14.617Z">
+<meta property="article:author" content="Violet">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/%5Cimages%5Cpasted-6.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2023/08/25/BUUCTF习题金三/"/>
+
+
+
+
+
+  <title>BUUCTF MISC习题 | Violet的网安妙妙屋</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Violet的网安妙妙屋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">缘分使然</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/25/BUUCTF%E4%B9%A0%E9%A2%98%E9%87%91%E4%B8%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Violet的网安妙妙屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">BUUCTF MISC习题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-08-25T00:00:00+08:00">
+                2023-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="金三胖"><a href="#金三胖" class="headerlink" title="金三胖"></a>金三胖</h2><p>本题考查的是找工具<br>首先打开zip<br>发现是动态图<br>动态图闪过flag<br>于是打开stegslove–analyse–frame browser（帧的浏览器）<br>不停切帧发现flag { hello hongke }<br>(虽然并不清楚为什么最后flag提交失败)<br>没事了 原来是hellohongke中间没有空格</p>
+<h2 id="N种解决办法"><a href="#N种解决办法" class="headerlink" title="N种解决办法"></a>N种解决办法</h2><p>上来就遇到了解压后发现该应用无法打开的问题<br>上CSDN叫我打开属性，点兼容性（失败）<br>修改regedit表格（失败）<br>直接关闭windows defender（失败）<br>卸载火绒以关闭各种防护（失败）<br>尝试了半个晚上各种方式后建议我重装系统<br>我直接选择不做这题了（恼）<br>有被题目标题嘲讽到</p>
+<h2 id="Wireshark-被嗅探的流量"><a href="#Wireshark-被嗅探的流量" class="headerlink" title="Wireshark&amp;&amp;被嗅探的流量"></a>Wireshark&amp;&amp;被嗅探的流量</h2><p>给了个流量包 搜flag直接出了</p>
+<h2 id="乌峰镇会图"><a href="#乌峰镇会图" class="headerlink" title="乌峰镇会图"></a>乌峰镇会图</h2><p>拖入010editor搜flag直接出</p>
+<h2 id="基础破解-rar"><a href="#基础破解-rar" class="headerlink" title="基础破解&amp;&amp;rar"></a>基础破解&amp;&amp;rar</h2><p>给了压缩包 提示四位数字密码<br>ARCHPR取消勾选用户自定义，然后取消勾选阿拉伯，范围只保留数字<br>爆破出密码后发现了末尾带&#x3D;号 拖进随波逐流出base64flag  </p>
+<h2 id="ZIP伪加密"><a href="#ZIP伪加密" class="headerlink" title="ZIP伪加密"></a>ZIP伪加密</h2><p>没有给密码范围提示 ARCHPR行不通<br>求助CSDN后<br>发现要拖入010editor<br>将文件第一行的67位置 第五行的78位置改为00<br>之后文件就直接开了 出flag<br>补充知识点：<strong>未加密 伪加密 真加密</strong>  </p>
+<p><img src="/%5Cimages%5Cpasted-6.png" alt="upload successful"><br>首先搞清楚图中有两个位置<br>504B0304是<strong>文件头标记</strong><br>504B0102是<strong>目录中的文件头标记</strong><br>他们都有<strong>全局方式位标记</strong><br>全局方式位标记<br>未加密 0000 0000<br>伪加密 0000 0900<br>真加密 0900 0900<br>题中虽然是看的是真加密但是题干提示了是伪加密<br>因此直接把两处都改成0000就出了<br>（全加密好像是用软件ziperello 碰到再说）  </p>
+<h2 id="文件中的秘密"><a href="#文件中的秘密" class="headerlink" title="文件中的秘密"></a>文件中的秘密</h2><p>给了jpg 010editor没搜到<br>点开属性 备注中找到了flag<br>（网上还有notepad+用16进制打开的）  </p>
+<h2 id="二维码"><a href="#二维码" class="headerlink" title="二维码"></a>二维码</h2><p>utools扫下直接出</p>
+<h2 id="ningen"><a href="#ningen" class="headerlink" title="ningen"></a>ningen</h2><p>给了jpg 拖入010拉到底发现有ningen.txt<br>于是怀疑有隐藏文件 打开linux 输入口令<br><code>binwalk -e 绝对路径</code><br>出了个包 在ARCHPR打开后<br>根据提示四位数字破解出flag<br>（纠正错误 ARCHPR是可以打开第一层未解压的文件的 只是不能直接拖进去而已）  </p>
+<h2 id="小明的保险箱"><a href="#小明的保险箱" class="headerlink" title="小明的保险箱"></a>小明的保险箱</h2><p>给了jpg 010没结果<br>尝试分离文件<br>首先试了foremost 但是没找到output<br>口令 <code>foremost 文件</code><br>然后 <code>binwalk -e 文件</code><br>之后ARCHPR出了<br>这俩程序好像没什么区别 除了口令不一样外<br>foremost会产出名为output的文件<br>binwalk会给一个相同名字<br>的文件</p>
+<h2 id="LSB"><a href="#LSB" class="headerlink" title="LSB"></a>LSB</h2><h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h5><p>题目给了png 而且很明显暗示了LSB<br>可以使用stegslove或者zsteg<br>拖入stegsolve 点击左右 在red blue green发现上面隐藏了什么<br>点开analyse-&gt;data extract（数据提取）<br>将以上三色勾0   （这步是为了把最低位二进制提取出来）<br>然后勾lsb first  （是为了用lsb来解码）<br>最后save bin就出了</p>
+<p><img src="/%5Cimages%5Cpasted-7.png" alt="upload successful"></p>
+<h5 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h5><p>使用zsteg（专门针对lsb）<br>先口令<code>zsteg xxx.png</code>（目的应该是看看各通道有什么）  </p>
+<p><img src="/%5Cimages%5Cpasted-8.png" alt="upload successful"></p>
+<p>观察到b1,rgb有个png image data<br>所以针对该通道 提取<br><code>zsteg -e b1,rgb,lsb,xy 图片名 &gt; out.png</code>  </p>
+<p><img src="/%5Cimages%5Cpasted-9.png" alt="upload successful"><br>扫二维码直接出了</p>
+<h2 id="爱因斯坦"><a href="#爱因斯坦" class="headerlink" title="爱因斯坦"></a>爱因斯坦</h2><p>给了jpg<br>010打开发现有exif和flag.txt<br>遂查看备注发现“this is not passwd”<br>然后binwalk分离 得到zip<br>拖入010发现 全局方位标记两个0900<br>但是完全改不了文件头 因为是只读模式<br>于是想到全加密破解  但是没有下软件<br>直接搜题告诉我 上面的“this is not passwd”就是密码  </p>
+<h2 id="easycap"><a href="#easycap" class="headerlink" title="easycap"></a>easycap</h2><p>是流量题<br>直接搜没搜出来<br>一看全是TCP 右键追踪TCP流就直接出了  </p>
+<h2 id="隐藏的钥匙"><a href="#隐藏的钥匙" class="headerlink" title="隐藏的钥匙"></a>隐藏的钥匙</h2><p>给了jpg 直接010后base64秒了  </p>
+<h2 id="另外一个世界"><a href="#另外一个世界" class="headerlink" title="另外一个世界"></a>另外一个世界</h2><p>终于来了点脚本题了<br>首先做个补充<br><strong>DEC是十进制 HEX是十六进制 BIN是二进制</strong><br>首先给了jpg 拖入010后发现末尾有一串二进制<br>在找flag和binwalk失败后 决定从二进制入手<br>使用python脚本  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import binascii  //引入二进制转字符串功能</span><br><span class="line">flag=hex(int(&#x27;01101011011011110110010101101011011010100011001101110011&#x27;,2)) </span><br><span class="line">//int内部是将二进制转为十进制 ，hex（十进制）能转换为十六进制 但是hex（二进制）会报错</span><br><span class="line">print(flag) //得到十六进制的flag</span><br><span class="line">binascii_a2b.hex(6b6f656b6a3373)  //这一行的意思是将hex转为二进制字符串</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<p>第一次敲python代码有被抽象到<br>基本思路： 引入代码功能-&gt;转化为十进制-&gt;转化为十六进制-&gt;转化为二进制字符串<br>这还真是另一个世界。</p>
+<h2 id="FLAG"><a href="#FLAG" class="headerlink" title="FLAG"></a>FLAG</h2><p>开始感觉到上强度了<br>给了png 010无收获后果断zsteg<br>但是报错了 提取不出来</p>
+<p><img src="/%5Cimages%5Cpasted-10.png" alt="upload successful"><br>可以知道有个zip 但是提取完找不到<br>于是求助stegsolve<br>切换图片后找半天还是找不到 查了才发现这里要直接蒙<br>redbluegreen勾选0 然后lsbfirst 直接savebin<br>由于前面知道了zip 所以命名1.zip<br>打开告诉我损坏了打不开<br>于是右键bandzip强行打开 然后点开后根据提示搜hctf就出了  </p>
+<h2 id="假如给我三天光明"><a href="#假如给我三天光明" class="headerlink" title="假如给我三天光明"></a>假如给我三天光明</h2><p>上来给了一张图  和一个zip</p>
+<p><img src="/%5Cimages%5Cpasted-15.png" alt="upload successful"><br>查了才知道下面的是盲文<br>对照表格出了密码<br>bandzip打开压缩包 输入密码 出来wav<br>audacity寻找线索无果 但是听得出来是morse<br>果断上外网进入 <a href="morsecode.world">morsecode.world</a><br>然后听声得到</p>
+<p><img src="/%5Cimages%5Cpasted-16.png" alt="upload successful"><br>注意别开英译中 还有就是拉丁文不用改成阿拉伯文<br>上传之后识别就行 最后把CTF删掉 然后把剩余字母改小写然后flag套起来就可以了  </p>
+<h2 id="后门查杀"><a href="#后门查杀" class="headerlink" title="后门查杀"></a>后门查杀</h2><p>题目给了zip 解压后是一堆文件 看不懂<br>题解说了这个是webshell攻击<br>估计是要我们找到那个隐藏漏洞的文件<br>于是找到webshell查杀工具D盾<br>将下好的文件拖进去 找到一个标红的文件include.php  </p>
+<p><img src="/%5Cimages%5Cpasted-17.png" alt="upload successful"><br>010打开 之后就直接找到passwd了<br>（这题还是假装没看到被火绒拦截的include.php吧<br>下次遇到被拦截的直接隔离区复活它然后拖入010好了）  </p>
+<h2 id="Webshell后门"><a href="#Webshell后门" class="headerlink" title="Webshell后门"></a>Webshell后门</h2><p>与上面这题如出一辙 不多赘述  </p>
+<h2 id="来一首歌吧"><a href="#来一首歌吧" class="headerlink" title="来一首歌吧"></a>来一首歌吧</h2><p>给了段音频<br>拖进audacity 发现是morse摩斯密码<br><strong>摩斯密码</strong>很好手敲 但是在和其他音乐砸在一起的时候 在线网站无法识别<br>这个时候就需要我们根据音频手打<br>一共就三种按键<br><strong>长  -<br>短  .<br>空格</strong><br>最后翻译出来就是<br>….. -… -.-. —-. ..— ….. -…. ….- —-. -… —– .—- —.. —..<br>..-. ….. ..— . -…. .—- –… -.. –… —– —-. ..— —-. .—- —.<br>.—- -.-.<br>敲了老半天最后是错的 麻了  </p>
+<h2 id="荷兰宽带数据泄露"><a href="#荷兰宽带数据泄露" class="headerlink" title="荷兰宽带数据泄露"></a>荷兰宽带数据泄露</h2><p>题目透露宽带数据<br>给了个bin结尾的文件<br>所以求助软件routepasswordview<br>使用软件打开后搜flag没搜到<br>开始搜password<br>搜到俩 挨个试<br>都不对<br>查了之后才发现passwd上面的username才是flag  </p>
+<h2 id="面具下的flag"><a href="#面具下的flag" class="headerlink" title="面具下的flag"></a>面具下的flag</h2><p>搞这题到半夜三点<br>半夜遇到这题真是折磨<br>首先给了jpg<br>binwalk后出了文件夹 给了个flag.vmdk<br>查了才知道这是伪加密 可以用<strong>7z直接解压vmdk后缀</strong><br>然后在主机下了7z 研究了半天最后还是从7z直接打开了文件夹<br>出来两个分开的flag 第一个是<br>+++++ +++++ [-&gt;++ +++++ +++&lt;] &gt;++.+ +++++ .&lt;+++ [-&gt;– -&lt;]&gt;- -.+++ +++.&lt;<br>++++[ -&gt;+++ +&lt;]&gt;+ +++.&lt; +++++ +[-&gt;- —– &lt;]&gt;– —– –.&lt;+ +++[- &gt;—-<br>&lt;]&gt;– —– .&lt;+++ [-&gt;++ +&lt;]&gt;+ +++++ .&lt;+++ +[-&gt;- —&lt;] &gt;-.&lt;+ +++++ [-&gt;++<br>++++&lt; ]&gt;+++ +++.&lt; +++++ [-&gt;– —&lt;] &gt;—- -.+++ .&lt;+++ [-&gt;– -&lt;]&gt;- —– .&lt;<br>类似这样的brainfuck解码<br>第二个死活找不到网上wp的文件<br>后来才发现他们全是用的<strong>kali自带的7z解压</strong><br><strong>只有在kali解压才能爆隐藏文件</strong><br>又找了半天kali的7z在哪<br>最后决定用口令<br><code>7z x 文件名 -o./</code><br>这里又有坑 x不能带- ，-o后面别忘了那个点<br>否则都会报错<br>output又找了半天 最后发现-o后面跟的就是文件名 所以自动给我堆在kali系统的一堆文件里面了  又试了下desktop也不好使 啥也没显示 最后强行找出来了<br>以后-0.&#x2F;后面就跟桌面上的幸运文件好了<br>睡大觉去了</p>
+<h2 id="二维码-1"><a href="#二维码-1" class="headerlink" title="二维码"></a>二维码</h2><p>给了后缀为png的二维码<br>扫完之后说secret is here  但不是flag<br>010没有发现<br>果断zsteg 但是报错了<br>只好去查 最后发现思维固化了<br><strong>png也是可以用binwalk的</strong><br>之后爆出来个文件夹<br>（插入一个小发现 kali爆出来的文件夹 会给一个zip和一个文件 总是让人不知道到底该去7z哪个 最后发现那个文件就是zip里面的 直接去解压文件就行）<br>给了个fournumber.txt 加密了<br>一开始以为是伪加密 但是7z解压后没反应<br>后来看到文件名 发现是爆破 ARCHPR直接出  </p>
+<h2 id="九连环"><a href="#九连环" class="headerlink" title="九连环"></a>九连环</h2><p>半夜睡不着爬起来写题<br>给了jpg<br>日常010后<br>binwalk -e分离<br>分离出来一个损坏的图片 和一个zip<br>明确的思路就是破解图片 得到zip的密码<br>查了之后发现是伪加密<br>7z无果后 再查发现需要去修改图片的头文件<br>但是binwalk开出来的图片甚至是0字节 010里面啥都没有<br>只好效仿网上的代码  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(从桌面打开终端很重要 因为output才会跑到桌面上来)</span><br><span class="line">binwalk 文件名 //解析文件</span><br><span class="line">foremost 文件名 //分离文件</span><br><span class="line">ls //展开目录 </span><br><span class="line">tree output/  //展示output里面内容  </span><br></pre></td></tr></table></figure>
+<p>foremost分离之后终于找到了不是零字节的损坏图片<br>但是foremost分离不会单独把图片从zip里面拖出来<br>意味着010没法直接打开图片<br>所以直接把zip拖入010<br>搜索PK（二进制就是504B0102）<br>伪加密都要改这个（除了7z直接跳过伪加密）  </p>
+<p><img src="/%5Cimages%5Cpasted-18.png" alt="upload successful"><br>把箭头处的0108改成0008<br>之后图片就恢复了（伪加密一直都是玄学 但最终规律都是改成00）<br>之后就需要找出jpg的隐写了<br>这里已经破案了<br>隐写png对应zsteg stegsolve<br>jpg对应steghide<br>口令<br><code>steghide extract -sf 文件名</code><br><img src="/%5Cimages%5Cpasted-20.png" alt="upload successful"><br>出来个ko.txt<br>cat ko.txt就出密码了<br>开了zip就出flag了</p>
+<h2 id="认真你就输了"><a href="#认真你就输了" class="headerlink" title="认真你就输了"></a>认真你就输了</h2><h4 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h4><p>开头给了个xml后缀的表格<br>打开后发现是乱码<br>拖入010 看到头部PK<br>怀疑是zip 直接修改后缀名zip<br>之后在一堆杂文件里面找到chart 里面就有flag<br>（** 插一嘴 有时候win11会隐藏后缀 点查看-&gt;显示-&gt;文件扩展名 就行 **）  </p>
+<h4 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h4><p>foremost之后解压就行   </p>
+<h2 id="被劫持的礼物"><a href="#被劫持的礼物" class="headerlink" title="被劫持的礼物"></a>被劫持的礼物</h2><p>解压后发现是wireshark<br>http TCP追踪<br>根据题目提示 找到admin和word<br>连在一起<br>32哈希MD5小写加密就出了  </p>
+<h2 id="藏藏藏"><a href="#藏藏藏" class="headerlink" title="藏藏藏"></a>藏藏藏</h2><p>7z解压后直接出<br>重点表扬flag<br>**flag{you are the best!} **  </p>
+<h2 id="被偷走的文件"><a href="#被偷走的文件" class="headerlink" title="被偷走的文件"></a>被偷走的文件</h2><p>给了个pcapng流量包<br>搜flag找到flag.rar<br>于是foremost<br>遇到一个需要密码的zip<br>010什么都没看出来<br>ARCHPR直接出了  </p>
+<h2 id="刷新过的图片"><a href="#刷新过的图片" class="headerlink" title="刷新过的图片"></a>刷新过的图片</h2><p>给了两个jpg<br>有一个是损坏的<br>根据题目提示 由于刷新是F5 所以是F5加密<br>kali下完之后 F5文件夹打开终端 输入口令<br><code>java Extract 文件名 </code><br>之后在F5文件夹找到output.txt<br>然后binwalk或者修改一下伪加密就出了<br>（伪加密的修改是第二个PK的9 10个字节改成PK）<br>这题我没做出来 因为我下的F5不听话 给的output全是0字节<br>两张图片放第一张就给0字节output<br>第二张就直接不停重复语句  </p>
+<h2 id="佛系青年"><a href="#佛系青年" class="headerlink" title="佛系青年"></a>佛系青年</h2><p>给了张png还有一个加密包<br>一开始的思路是 png里面藏密码<br>但是foremost图片后 给了我张jpg 啥都看不出来 思路断了<br>查了才知道这张png啥用没有  （后来才知道foremost有时候会返回原图0000.jpg）<br>直接把<strong>整个文件</strong>拖入010<br>修改如图蓝色标注</p>
+<p><img src="/%5Cimages%5Cpasted-21.png" alt="upload successful"><br>将如图所示的09改成了00<br>我发现伪加密去记第几个pk后第几位压根没用 每题修改位置都不一样<br><strong>直接找类似504B0102后面0900这样的格式就行</strong><br>之后给了段佛语<br>直接搜佛加密 找到在线网站就行</p>
+<h2 id="你猜我是个啥"><a href="#你猜我是个啥" class="headerlink" title="你猜我是个啥"></a>你猜我是个啥</h2><p>给了个加密包<br>拖进010直接找到了flag  </p>
+<h2 id="snake"><a href="#snake" class="headerlink" title="snake"></a>snake</h2><p>给了jpg<br>foremost后给了个没加密的zip<br>里面两个未知后缀的文件<br>key文件打开base64 得到提示<br>What is Nicki Minaj’s favorite song that refers to snakes?<br>查了一下发现是anaconda<br>根据题目提示 知道了本题加密为Serpent（蛇）加密<br>加密key为anaconda<br><a target="_blank" rel="noopener" href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com/</a><br>这个是加密网站  </p>
+<p><img src="/%5Cimages%5Cpasted-22.png" alt="upload successful"><br>选择file  输入key 就搞定了</p>
+<h2 id="秘密文件"><a href="#秘密文件" class="headerlink" title="秘密文件"></a>秘密文件</h2><p>给了流量包<br>wireshark打开 搜flag 右键TCP<br>发现rar<br>foremost<br>之后ARCHPR就出了  </p>
+<h2 id="just-a-rar"><a href="#just-a-rar" class="headerlink" title="just a rar"></a>just a rar</h2><p>文件名提示4number加密<br>ARCHPR<br>然后出了个jpg<br>010没发现 但是看到exif<br>看备注直接找到了flag  </p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束，感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/08/24/MISC/" rel="next" title="如何提交博客">
+                <i class="fa fa-chevron-left"></i> 如何提交博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/08/25/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%A8%8B/" rel="prev" title="流量分析学习路程">
+                流量分析学习路程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%91%E4%B8%89%E8%83%96"><span class="nav-number">1.</span> <span class="nav-text">金三胖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#N%E7%A7%8D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">N种解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wireshark-%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">Wireshark&amp;&amp;被嗅探的流量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%8C%E5%B3%B0%E9%95%87%E4%BC%9A%E5%9B%BE"><span class="nav-number">4.</span> <span class="nav-text">乌峰镇会图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%A0%B4%E8%A7%A3-rar"><span class="nav-number">5.</span> <span class="nav-text">基础破解&amp;&amp;rar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ZIP%E4%BC%AA%E5%8A%A0%E5%AF%86"><span class="nav-number">6.</span> <span class="nav-text">ZIP伪加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86"><span class="nav-number">7.</span> <span class="nav-text">文件中的秘密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E7%A0%81"><span class="nav-number">8.</span> <span class="nav-text">二维码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ningen"><span class="nav-number">9.</span> <span class="nav-text">ningen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E6%98%8E%E7%9A%84%E4%BF%9D%E9%99%A9%E7%AE%B1"><span class="nav-number">10.</span> <span class="nav-text">小明的保险箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSB"><span class="nav-number">11.</span> <span class="nav-text">LSB</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="nav-number">11.0.0.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="nav-number">11.0.0.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6"><span class="nav-number">12.</span> <span class="nav-text">爱因斯坦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#easycap"><span class="nav-number">13.</span> <span class="nav-text">easycap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99"><span class="nav-number">14.</span> <span class="nav-text">隐藏的钥匙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C"><span class="nav-number">15.</span> <span class="nav-text">另外一个世界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FLAG"><span class="nav-number">16.</span> <span class="nav-text">FLAG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%87%E5%A6%82%E7%BB%99%E6%88%91%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E"><span class="nav-number">17.</span> <span class="nav-text">假如给我三天光明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E9%97%A8%E6%9F%A5%E6%9D%80"><span class="nav-number">18.</span> <span class="nav-text">后门查杀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Webshell%E5%90%8E%E9%97%A8"><span class="nav-number">19.</span> <span class="nav-text">Webshell后门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A5%E4%B8%80%E9%A6%96%E6%AD%8C%E5%90%A7"><span class="nav-number">20.</span> <span class="nav-text">来一首歌吧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8D%B7%E5%85%B0%E5%AE%BD%E5%B8%A6%E6%95%B0%E6%8D%AE%E6%B3%84%E9%9C%B2"><span class="nav-number">21.</span> <span class="nav-text">荷兰宽带数据泄露</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag"><span class="nav-number">22.</span> <span class="nav-text">面具下的flag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E7%A0%81-1"><span class="nav-number">23.</span> <span class="nav-text">二维码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E8%BF%9E%E7%8E%AF"><span class="nav-number">24.</span> <span class="nav-text">九连环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A4%E7%9C%9F%E4%BD%A0%E5%B0%B1%E8%BE%93%E4%BA%86"><span class="nav-number">25.</span> <span class="nav-text">认真你就输了</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">25.0.1.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C"><span class="nav-number">25.0.2.</span> <span class="nav-text">解法二</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A4%BC%E7%89%A9"><span class="nav-number">26.</span> <span class="nav-text">被劫持的礼物</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%97%8F%E8%97%8F%E8%97%8F"><span class="nav-number">27.</span> <span class="nav-text">藏藏藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A2%AB%E5%81%B7%E8%B5%B0%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">28.</span> <span class="nav-text">被偷走的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87"><span class="nav-number">29.</span> <span class="nav-text">刷新过的图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4"><span class="nav-number">30.</span> <span class="nav-text">佛系青年</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5"><span class="nav-number">31.</span> <span class="nav-text">你猜我是个啥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snake"><span class="nav-number">32.</span> <span class="nav-text">snake</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%98%E5%AF%86%E6%96%87%E4%BB%B6"><span class="nav-number">33.</span> <span class="nav-text">秘密文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#just-a-rar"><span class="nav-number">34.</span> <span class="nav-text">just a rar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">35.</span> <span class="nav-text"></span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Violet</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共4.1k字</span>
+  <span class="post-meta-divider">|</span>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  <span class="post-meta-divider">|</span>
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  <span class="post-meta-divider">|</span>
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
