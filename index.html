@@ -588,6 +588,10 @@
 <p><img src="/%5Cimages%5Cpasted-22.png" alt="upload successful"><br>选择file  输入key 就搞定了</p>
 <h2 id="秘密文件"><a href="#秘密文件" class="headerlink" title="秘密文件"></a>秘密文件</h2><p>给了流量包<br>wireshark打开 搜flag 右键TCP<br>发现rar<br>foremost<br>之后ARCHPR就出了  </p>
 <h2 id="just-a-rar"><a href="#just-a-rar" class="headerlink" title="just a rar"></a>just a rar</h2><p>文件名提示4number加密<br>ARCHPR<br>然后出了个jpg<br>010没发现 但是看到exif<br>看备注直接找到了flag  </p>
+<h2 id="鸡你太美"><a href="#鸡你太美" class="headerlink" title="鸡你太美"></a>鸡你太美</h2><p>开头给了两个gif<br>一个完好一个损坏<br>损坏那个gif拖入010之后发现文件头不对<br>按照之前那个gif的文件头<br>在010 edit-&gt;插入四个字节<br>依次为47 49 46 38<br>然后修好gif之后就出flag了  </p>
+<h2 id="菜刀666"><a href="#菜刀666" class="headerlink" title="菜刀666"></a>菜刀666</h2><p>熟悉的半夜 熟悉的强度题<br>给了流量包<br>在TCP7发现大量字符<br>看到z2&#x3D;FFD8以及末尾的FFD9<br>知道是jpg  </p>
+<p><img src="/%5Cimages%5Cpasted-23.png" alt="upload successful"><br>回到流量包 在TCP7后面跟上and http<br>找到z2 点击显示分组字节 从第三个字节开始（要排除z2&#x3D;）  </p>
+<p><img src="/%5Cimages%5Cpasted-24.png" alt="upload successful"><br>导出为1.txt<br>之后拖入010 然后导出jpg<br>就得到一张图片 写着this is passwd<br>但是之前看到流量包里面藏着zip<br>于是foremost以下 然后拿passwd解开了密码<br>flag就出了。<br>我看网上还有用脚本搞定十六进制的 大半夜就不折磨自己了 </p>
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2>
           
         
@@ -880,7 +884,7 @@
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.1k字</span>
+  <span class="post-count">博客全站共4.3k字</span>
   <span class="post-meta-divider">|</span>
   本站总访问量<span id="busuanzi_value_site_pv"></span>次
   <span class="post-meta-divider">|</span>
