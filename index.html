@@ -821,10 +821,22 @@ while i &lt; len(x):
 print(flag)
 </code></pre>
 <p>if <strong>name</strong> &#x3D;&#x3D; ‘<strong>main</strong>‘:<br>    b64_stego_decode()</p>
-<pre><code>
-![upload successful](\images\pasted-38.png)  
-直接出flag了  
-代码出bug最简洁的方式就是换个人cv  
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![upload successful](\images\pasted-38.png)  </span><br><span class="line">直接出flag了  </span><br><span class="line">代码出bug最简洁的方式就是换个人cv  </span><br><span class="line">#### ezmisc  </span><br><span class="line">010打开crc报错 ，修改第16位为1出flag  </span><br><span class="line">#### 伟大的侦探  </span><br><span class="line">开头txt和加密压缩包  </span><br><span class="line"></span><br><span class="line">![upload successful](\images\pasted-39.png)  </span><br><span class="line">查了才知道是010里面的EBCDIC加密  </span><br><span class="line"></span><br><span class="line">![upload successful](\images\pasted-40.png)  </span><br><span class="line">出了图片密码后小人加密破解就行  </span><br><span class="line"></span><br><span class="line">![upload successful](\images\pasted-41.png)  </span><br><span class="line">#### caesar  </span><br><span class="line">直接凯撒在线网站出（注意设置偏移量为1，我上的网站默认10）  </span><br><span class="line">#### 黑客帝国  </span><br><span class="line">上来给txt乱码  </span><br><span class="line">脚本查下字符个数发现是十六进制  </span><br><span class="line">打开010查文件头526发现是rar  </span><br><span class="line">想导出十六进制然后后缀改rar发现失败  </span><br><span class="line">查了才知道要先脚本十六进制改成二进制rar才能打开  </span><br></pre></td></tr></table></figure>
+<p>import binascii</p>
+<p>hex_data&#x3D;’txt文件中16进制数据’<br>out&#x3D;open(‘flag.rar’,’wb’)<br>out.write(binascii.unhexlify(hex_data))<br>out.close()</p>
+<pre><code>这里直接把十六进制复制进脚本，就直接导出为rar了  
+ARCHPR  
+然后报格式出错  
+打开发现确实是png文件头  
+查了才知道 看末尾FFD9则文件头应修改为FFD8  
+#### 低个头  
+
+![upload successful](\images\pasted-42.png)
+
+
+![upload successful](\images\pasted-44.png)  
+键盘上面相应的字母图形构成CTF  
+键盘加密。flag&#123;CTF&#125;  
 #### 
 </code></pre>
 
@@ -1119,7 +1131,7 @@ print(flag)
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.7k字</span>
+  <span class="post-count">博客全站共9k字</span>
   <span class="post-meta-divider">|</span>
   本站总访问量<span id="busuanzi_value_site_pv"></span>次
   <span class="post-meta-divider">|</span>
